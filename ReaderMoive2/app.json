@@ -1,0 +1,12 @@
+{
+  "pages": [
+    "pages/welcome/welcome"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#b3d4db",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "第一个微信小程序",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light"
+  }
+}
