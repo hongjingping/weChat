@@ -1,8 +1,9 @@
 {
   "pages": [
-    "pages/welcome/welcome",
     "pages/post/post",
-    "pages/post/post-detail/post-detail"
+    "pages/welcome/welcome",
+    "pages/post/post-detail/post-detail",
+    "pages/movies/movies"
   ],
   "window": {
     "navigationBarBackgroundColor": "#b3d4db",
@@ -10,5 +11,22 @@
     "navigationBarTitleText": "第一个微信小程序页面-首页",
     "backgroundColor": "#eeeeee",
     "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/post/post",
+        "text": "列表页",
+        "iconPath": "/images/icon/collection-anti.png",
+        "selectedIconPath": "/images/icon/collection.png"
+      },
+      {
+        "pagePath": "pages/movies/movies",
+        "text": "电影",
+        "iconPath":"/images/icon/share-anti.png",
+        "selectedIconPath": "/images/icon/share.png"
+      }
+    ]
   }
 }

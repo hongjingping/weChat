@@ -9,8 +9,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "1.6.6",
-	"appid": "touristappid",
-	"projectname": "ReaderMoive2",
+	"appid": "wx23115d43f2c73077",
+	"projectname": "ReaderMoiveDemo",
 	"condition": {
 		"search": {
 			"current": -1,
