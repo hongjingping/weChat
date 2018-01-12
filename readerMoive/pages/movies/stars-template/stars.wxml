@@ -1,0 +1,13 @@
+<template name="startsTemplate">
+<!--包裹5颗星星  -->
+  <view class='stars-container'>
+    <view class='stars'>
+      <image src='/images/icon/star.png'></image>
+      <image src='/images/icon/chat.png'></image>
+      <image src='/images/icon/chat.png'></image>
+      <image src='/images/icon/chat.png'></image>
+      <image src='/images/icon/chat.png'></image>
+    </view>
+    <text class='star-score'>8.9</text>
+  </view>
+</template>

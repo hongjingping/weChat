@@ -1,7 +1,7 @@
 {
-  "navigationBarBackgroundColor": "#ff00ff",
+  "navigationBarBackgroundColor": "#99FFFF",
   "navigationBarTextStyle": "black",
-  "navigationBarTitleText": "第四个小程序页面-列表页",
-  "backgroundColor": "#eeeeee",
+  "navigationBarTitleText": "第四个小程序页面-电影页",
+  "backgroundColor": "#99FFFF",
   "backgroundTextStyle": "light"
 }

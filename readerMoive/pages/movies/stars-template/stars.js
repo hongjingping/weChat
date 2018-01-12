@@ -11,24 +11,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // 调用豆瓣接口
-    wx.request({
-      url: 'https://api.douban.com/v2/movie/top250',
-      data: {},
-      method: 'GET',
-      header: {
-        'Content-Type': "application/xml"
-      },
-      success: function (res) {
-        console.log('成功：' + res)
-      },
-      fail: function (res) {
-        console.log('失败：'+ res)
-      },
-      complate: function (res) {
-        console.log('完成:' + res)
-      }
-    })
+    
   },
 
   /**
