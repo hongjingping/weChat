@@ -4,7 +4,10 @@ var app = getApp()
 Page({
   data: {
     movies: {},
-    navigationTitle: ''
+    navigationTitle: '',
+    requestUrl: '',
+    totalCount: 0,
+    isEmpty: true
   },
   onLoad: function (options) {
     var category = options.category;
@@ -18,7 +21,13 @@ Page({
       case '豆瓣top250': dataUrl = app.globalData.doubanBase + '/v2/movie/top250'
       break;
     }
+    this.data.requestUrl = dataUrl;
     util.http(dataUrl, this.processDoubanData)
+  },
+  // 上拉加载更多
+  onScrollLower: function (options) {
+    var nextUrl = this.data.requestUrl + '?start=' + this.data.totalCount + '&count=20';
+    util.http(nextUrl, this.processDoubanData)
   },
   // 处理数据
   processDoubanData: function (moviesDouban) {
@@ -39,9 +48,17 @@ Page({
       }
       movies.push(temp)
     }
+    var totalMovies = {};
+    if (!_this.data.isEmpty) {
+      totalMovies = _this.data.movies.concat(movies)
+    } else {
+      totalMovies = movies;
+      _this.data.isEmpty = false;
+    }
     _this.setData({
-      movies: movies
+      movies: totalMovies
     })
+    _this.data.totalCount += 20;
   },
   // 动态设置导航栏标题
   onReady: function (options) {
