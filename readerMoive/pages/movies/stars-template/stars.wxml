@@ -2,12 +2,11 @@
 <!--包裹5颗星星  -->
   <view class='stars-container'>
     <view class='stars'>
-      <image src='/images/icon/star.png'></image>
-      <image src='/images/icon/chat.png'></image>
-      <image src='/images/icon/chat.png'></image>
-      <image src='/images/icon/chat.png'></image>
-      <image src='/images/icon/chat.png'></image>
+      <block wx:for="{{ stars }}" wx:for-item = "i">
+        <image wx:if="{{ i }}" src='/images/icon/star.png'></image>
+        <image wx:else src='/images/icon/chat.png'></image>
+      </block>
     </view>
-    <text class='star-score'>8.9</text>
+    <text class='star-score'>{{ average }}</text>
   </view>
 </template>

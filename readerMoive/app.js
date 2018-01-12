@@ -5,6 +5,8 @@ App({
     g_isPlayingMusic: false,
     // 当前播放音乐标识
     g_currentMusicPostId: null, 
+    // 接口前缀
+    doubanBase: 'https://api.douban.com'
   }
 })
 

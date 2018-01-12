@@ -3,16 +3,16 @@
   <view class='movie-list-container'>
     <view class='inner-container'>
       <view class='movie-head'>
-        <text class='slogan'>正在热映</text>
-        <view class='more'>
+        <text class='slogan'>{{ cagetoryTitle }}</text>
+        <view class='more' catchtap='onMoreTap'>
           <text class='more-text'>更多</text>
           <image class='more-img' src="../../images/icon/link.png"></image>
         </view>
       </view>
       <view class='movies-container'>
-        <template is="movieTemplate"></template>
-        <template is="movieTemplate"></template>
-        <template is="movieTemplate"></template>
+        <block wx:for="{{ movies }}" wx:for-item= "movie">
+          <template is="movieTemplate" data="{{ ...movie }}"></template>
+        </block>
       </view>
     </view>
   </view>
