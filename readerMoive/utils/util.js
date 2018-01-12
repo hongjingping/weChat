@@ -10,6 +10,25 @@ function covertToStarsArray(stars) {
   }
   return array;
 }
+
+// 调接口
+function http(url, callBack) {
+  // 调用豆瓣接口
+  wx.request({
+    url: url,
+    method: 'GET',
+    header: {
+      'Content-Type': "application/xml"
+    },
+    success: function (res) {
+      callBack(res.data)
+    },
+    fail: function (res) {
+      console.log(res)
+    }
+  })
+}
 module.exports = {
-  covertToStarsArray: covertToStarsArray
+  covertToStarsArray: covertToStarsArray,
+  http: http
 }
