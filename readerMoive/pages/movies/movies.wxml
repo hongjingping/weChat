@@ -1,10 +1,10 @@
 <import src="movie-list-template/movie-list.wxml"/>
 <import src="movie-grid/movie-grid-template.wxml"/>
 
- <!--搜索  -->
+ <!-- 搜索 -->
   <view class='search'>
     <icon type='search' class='search-img' size='13' color='#405f80'></icon>
-    <input type='text' placeholder='再见前任、勇敢的心' placeholder-class='placeholder' bindfocus='onBindFocus' bindchange='onBindChange'></input>
+    <input type='text' placeholder='再见前任、勇敢的心' placeholder-class='placeholder' bindfocus='onBindFocus' bindblur='onBindBlur'></input>
     <image wx:if="{{ searchPanelShow }}" class='del-img' src='/images/icon/del.png' bindtap='OnCancelImgTap'></image>
   </view>
 <view class='container' wx:if="{{ containerShow }}">
@@ -20,5 +20,5 @@
 </view>
 
 <view class='search-pannel' wx:if="{{ searchPanelShow }}">
-  <template is='movieGridTemplate'></template>
+  <template is='movieGridTemplate' data="{{ ...searchResult }}"></template>
 </view>

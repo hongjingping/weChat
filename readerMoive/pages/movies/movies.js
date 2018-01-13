@@ -10,7 +10,8 @@ Page({
     comingSoon: {},
     top250: {},
     containerShow: true,
-    searchPanelShow: false
+    searchPanelShow: false,
+    searchResult: ''
   },
 
   /**
@@ -30,7 +31,7 @@ Page({
       url: 'more-movie/movie-movie?category=' + category,
     })
   },
-  getMovieListData: function (url, settedKey, cagetoryTitle ) {
+  getMovieListData: function (url, settedKey, cagetoryTitle) {
     let _this = this;
     // 调用豆瓣接口
     wx.request({
@@ -51,31 +52,34 @@ Page({
       }
     })
   },
+
   OnCancelImgTap: function (options) {
     this.setData({
       containerShow: true,
-      searchPanelShow: false,
-      // serachResult: {}
+      searchPanelShow: false
     })
   },
+
   onBindFocus: function (event) {
     this.setData({
       containerShow: false,
-      searchPanelShow: true
+      searchPanelShow: true,
     })
   },
 
-  onBindChange: function (event) {
-    console.log('onBindChange')
+  onBindBlur: function (event) {
+    var text = event.detail.value;
+    var searchUrl = app.globalData.doubanBase + '/v2/movie/search?q=' + text;
+    this.getMovieListData(searchUrl, 'searchResult', '');
   },
 
-  processDoubanData: function (moviesDouban, settedKey, cagetoryTitle ) {
+  processDoubanData: function (moviesDouban, settedKey, cagetoryTitle) {
     let _this = this;
     var movies = [];
-    for (var idx in moviesDouban.subjects ) {
+    for (var idx in moviesDouban.subjects) {
       var subject = moviesDouban.subjects[idx];
       var title = subject.title;
-      if ( title.length >= 6 ) {
+      if (title.length >= 6) {
         title = title.substring(0, 6) + '...';
       }
       var temp = {
