@@ -60,6 +60,14 @@ Page({
       app.globalData.g_isPlayingMusic = false
       app.globalData.g_currentMusicPostId = null
     })
+    // 音乐播放完成后图标状态复位
+    wx.onBackgroundAudioStop(function () {
+      _this.setData({
+        isPlayingMusic: true
+      })
+      app.globalData.g_isPlayingMusic = false
+      app.globalData.g_currentMusicPostId = null
+    })
   },
 
   // 异步方法
