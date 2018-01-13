@@ -41,8 +41,12 @@ Page({
         'Content-Type': "application/xml"
       },
       success: function (res) {
-        console.log(res);
-        _this.processDoubanData(res.data, settedKey, cagetoryTitle)
+        console.log();
+        if (res.data.subjects.length != 0 ) {
+          _this.processDoubanData(res.data, settedKey, cagetoryTitle)
+        } else {
+          console.log('亲爱的用户，该文案目前没有对应的电影哦，请查看其他的电影~')
+        }
       },
       fail: function (res) {
         console.log(res)

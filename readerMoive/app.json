@@ -19,14 +19,14 @@
       {
         "pagePath": "pages/post/post",
         "text": "列表页",
-        "iconPath": "/images/icon/collection-anti.png",
-        "selectedIconPath": "/images/icon/collection.png"
+        "iconPath": "images/icon/collection-anti.png",
+        "selectedIconPath": "images/icon/collection.png"
       },
       {
         "pagePath": "pages/movies/movies",
         "text": "电影",
-        "iconPath":"/images/icon/share-anti.png",
-        "selectedIconPath": "/images/icon/share.png"
+        "iconPath":"images/icon/share-anti.png",
+        "selectedIconPath": "images/icon/share.png"
       }
     ]
   }
