@@ -31,6 +31,15 @@ Page({
     // 显示loading
     wx.showNavigationBarLoading()
   },
+  // 下拉刷新
+  onPullDownRefresh: function (options) {
+    let _this = this;
+    var refreshUrl = _this.data.requestUrl + '?start=0&count=20';
+    _this.data.movies = {};
+    _this.data.isEmpty = true;
+    util.http(refreshUrl, _this.processDoubanData)
+    wx.showNavigationBarLoading()
+  },
   // 处理数据
   processDoubanData: function (moviesDouban) {
     let _this = this;
@@ -64,6 +73,7 @@ Page({
     _this.data.totalCount += 20;
     // 隐藏loading
     wx.hideNavigationBarLoading();
+    wx.stopPullDownRefresh();
   },
   // 动态设置导航栏标题
   onReady: function (options) {
