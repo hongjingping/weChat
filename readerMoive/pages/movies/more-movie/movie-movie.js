@@ -28,6 +28,8 @@ Page({
   onScrollLower: function (options) {
     var nextUrl = this.data.requestUrl + '?start=' + this.data.totalCount + '&count=20';
     util.http(nextUrl, this.processDoubanData)
+    // 显示loading
+    wx.showNavigationBarLoading()
   },
   // 处理数据
   processDoubanData: function (moviesDouban) {
@@ -49,6 +51,7 @@ Page({
       movies.push(temp)
     }
     var totalMovies = {};
+    // 如果要绑定新加载的数据，就要和旧的数据结合在一起
     if (!_this.data.isEmpty) {
       totalMovies = _this.data.movies.concat(movies)
     } else {
@@ -59,6 +62,8 @@ Page({
       movies: totalMovies
     })
     _this.data.totalCount += 20;
+    // 隐藏loading
+    wx.hideNavigationBarLoading();
   },
   // 动态设置导航栏标题
   onReady: function (options) {
