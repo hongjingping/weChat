@@ -8,7 +8,9 @@ Page({
   data: {
     inTheaters: {},
     comingSoon: {},
-    top250: {}
+    top250: {},
+    containerShow: true,
+    searchPanelShow: false
   },
 
   /**
@@ -48,6 +50,23 @@ Page({
         console.log(res)
       }
     })
+  },
+  OnCancelImgTap: function (options) {
+    this.setData({
+      containerShow: true,
+      searchPanelShow: false,
+      // serachResult: {}
+    })
+  },
+  onBindFocus: function (event) {
+    this.setData({
+      containerShow: false,
+      searchPanelShow: true
+    })
+  },
+
+  onBindChange: function (event) {
+    console.log('onBindChange')
   },
 
   processDoubanData: function (moviesDouban, settedKey, cagetoryTitle ) {

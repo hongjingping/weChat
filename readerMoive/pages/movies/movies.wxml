@@ -1,5 +1,13 @@
 <import src="movie-list-template/movie-list.wxml"/>
-<view class='container'>
+<import src="movie-grid/movie-grid-template.wxml"/>
+
+ <!--搜索  -->
+  <view class='search'>
+    <icon type='search' class='search-img' size='13' color='#405f80'></icon>
+    <input type='text' placeholder='再见前任、勇敢的心' placeholder-class='placeholder' bindfocus='onBindFocus' bindchange='onBindChange'></input>
+    <image wx:if="{{ searchPanelShow }}" class='del-img' src='/images/icon/del.png' bindtap='OnCancelImgTap'></image>
+  </view>
+<view class='container' wx:if="{{ containerShow }}">
   <view class='movies-template'>
     <template is="movieListTemplate" data="{{ ...inTheaters }}"/>
   </view>
@@ -9,4 +17,8 @@
   <view class='movies-template'>
     <template is="movieListTemplate" data="{{ ...top250 }}"/>
   </view>
+</view>
+
+<view class='search-pannel' wx:if="{{ searchPanelShow }}">
+  <template is='movieGridTemplate'></template>
 </view>
