@@ -28,7 +28,31 @@ function http(url, callBack) {
     }
   })
 }
+
+// 将后端返回的用/拼接
+function covertToCastString(casts) {
+  var castsjoin = "";
+  for ( var idx in casts ) {
+    castsjoin = castsjoin + casts[idx].name + '/'
+  }
+  return castsjoin.substring(0, castsjoin.length-2);
+}
+
+function covertToCastInfos (casts) {
+  var castsArray = []
+  for (var idx in casts) {
+    var cast = {
+      img: casts[idx].avatars ? casts[idx].avatars.large : '',
+      name: casts[idx].name
+    }
+    castsArray.push(cast)
+  }
+  return castsArray;
+}
+
 module.exports = {
   covertToStarsArray: covertToStarsArray,
-  http: http
+  http: http,
+  covertToCastString: covertToCastString,
+  covertToCastInfos: covertToCastInfos
 }

@@ -1,0 +1,8 @@
+/* pages/movies/more-detail/movie-detail.wxss */
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.head-img {
+  
+}

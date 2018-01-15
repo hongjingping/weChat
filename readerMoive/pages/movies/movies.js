@@ -25,10 +25,18 @@ Page({
     this.getMovieListData(comingSoonUrl, 'comingSoon', '即将上映');
     this.getMovieListData(top250Url, 'top250', '豆瓣top250');
   },
+  // 更多电影页面
   onMoreTap: function (event) {
-    var category = event.currentTarget.dataset.category
+    var category = event.currentTarget.dataset.category;
     wx.navigateTo({
       url: 'more-movie/movie-movie?category=' + category,
+    })
+  },
+  // 电影详情页面
+  onMovieTap: function ( event ) {
+    var movieId = event.currentTarget.dataset.movieid;
+    wx.navigateTo({
+      url: "more-detail/movie-detail?id=" + movieId,
     })
   },
   getMovieListData: function (url, settedKey, cagetoryTitle) {
@@ -41,7 +49,6 @@ Page({
         'Content-Type': "application/xml"
       },
       success: function (res) {
-        console.log();
         if (res.data.subjects.length != 0 ) {
           _this.processDoubanData(res.data, settedKey, cagetoryTitle)
         } else {
