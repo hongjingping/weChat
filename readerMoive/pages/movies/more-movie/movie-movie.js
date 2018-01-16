@@ -40,6 +40,13 @@ Page({
     util.http(refreshUrl, _this.processDoubanData)
     wx.showNavigationBarLoading()
   },
+  // 电影详情页面
+  onMovieTap: function (event) {
+    var movieId = event.currentTarget.dataset.movieid;
+    wx.navigateTo({
+      url: "../more-detail/movie-detail?id=" + movieId,
+    })
+  },
   // 处理数据
   processDoubanData: function (moviesDouban) {
     let _this = this;
