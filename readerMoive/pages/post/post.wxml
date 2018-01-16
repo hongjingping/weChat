@@ -13,7 +13,7 @@
       <image src="/images/kt4.jpg" data-postId="4"></image>
     </swiper-item>
   </swiper>
-  <block wx:for="{{ post_content }}" wx:for-item = "item" wx:for-index = "idx">
+  <block wx:for="{{ post_content }}" wx:for-item = "item" wx:key='index' wx:for-index = "idx">
     <!--template模板可以使用到多处  data-postId传postId-->
     <view catchtap = "onPostTap" data-postId="{{ item.postId }}">
       <template is="postItem" data="{{ ...item }}" />

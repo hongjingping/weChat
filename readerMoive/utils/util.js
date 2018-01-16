@@ -16,9 +16,9 @@ function http(url, callBack) {
   // 调用豆瓣接口
   wx.request({
     url: url,
-    method: 'GET',
-    header: {
-      'Content-Type': "application/xml"
+    method: 'POST',
+    header: { 
+      'Content-Type': 'application/xml' 
     },
     success: function (res) {
       callBack(res.data)

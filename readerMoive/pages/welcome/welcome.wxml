@@ -6,6 +6,6 @@
   <image class='user-avatar' src='/images/kt1.jpg'></image>
   <text class='user-name'><text style='color: red'>Hello</text>, wikiHong</text>
   <view class='moto-container' bindtap="onTap">
-    <text class='moto' bindtap="onCatchtap">welcome,小程序之旅</text>
+    <text class='moto'>welcome,小程序之旅</text>
   </view>
 </view>
