@@ -1,11 +1,11 @@
 {
   "pages": [
-    "pages/chooseAddress/chooseAddress",
     "pages/welcome/welcome",
     "pages/post/post",
     "pages/post/post-detail/post-detail",
     "pages/movies/movies",
     "pages/movies/more-movie/movie-movie",
+    "pages/chooseAddress/chooseAddress",
     "pages/movies/more-detail/movie-detail"
   ],
   "window": {
