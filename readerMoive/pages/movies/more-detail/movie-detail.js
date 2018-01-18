@@ -7,14 +7,20 @@ Page({
   },
   // es6: module, class, promise, =>
   onLoad: function (options) {
-    let _this = this;
+    // let _this = this;
     var movieId = options.id;
     var url = app.globalData.doubanBase + '/v2/movie/subject/' + movieId;
     // util.http( url, this.processDoubanData);
     var movie = new Movie(url)
     // 异步
-    movie.getMovieData(function (movie) {
-      _this.setData({
+    // movie.getMovieData(function (movie) {
+    //   _this.setData({
+    //     movie: movie
+    //   })
+    // })
+    // 使用箭头函数
+    movie.getMovieData( (movie) => {
+      this.setData({
         movie: movie
       })
     })
