@@ -25,7 +25,13 @@ Page({
     util.http(dataUrl, this.processDoubanData)
   },
   // 上拉加载更多
-  onScrollLower: function (options) {
+  // onScrollLower: function (options) {
+  //   var nextUrl = this.data.requestUrl + '?start=' + this.data.totalCount + '&count=20';
+  //   util.http(nextUrl, this.processDoubanData)
+  //   // 显示loading
+  //   wx.showNavigationBarLoading()
+  // },
+  onReachBottom: function (options) {
     var nextUrl = this.data.requestUrl + '?start=' + this.data.totalCount + '&count=20';
     util.http(nextUrl, this.processDoubanData)
     // 显示loading
