@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/chooseAddress/chooseAddress",
     "pages/welcome/welcome",
     "pages/post/post",
     "pages/post/post-detail/post-detail",

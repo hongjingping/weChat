@@ -1,0 +1,11 @@
+<!--pages/chooseAddress/chooseAddress.wxml-->
+<view>
+  <!-- 1.选择地址  -->
+  <button type='primary' style='margin-bottom: 20px; margin-top: 30px;' bindtap='onChooseAddress'>选择收货地址</button>
+  <button type='warn' style='margin-bottom: 20px; margin-top: 30px;' bindtap='onOpenSetting'>用户界面设置</button>
+  <button type='primary' style='margin-bottom: 20px; margin-top: 30px;' bindtap='checkSession'>检查登录状态</button>
+  <button type='warn' style='margin-bottom: 20px; margin-top: 30px;' bindtap='getUserInfo'>获取用户信息</button>
+  <button type='primary' style='margin-bottom: 20px; margin-top: 30px;' bindtap='starRecord'>开始录音</button>
+  <button type='warn' style='margin-bottom: 20px; margin-top: 30px;' bindtap='showShare'>设置分享按钮</button>
+  <button type='primary' style='margin-bottom: 20px; margin-top: 30px;' bindtap='hideShare'>取消分享按钮</button>
+</view>
