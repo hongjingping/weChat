@@ -7,6 +7,10 @@ App({
     g_currentMusicPostId: null, 
     // 接口前缀
     doubanBase: 'https://api.douban.com'
+  },
+  onLaunch: function (options) {
+    // 调用API从本地获取场景值
+    console.log(options)
   }
 })
 
