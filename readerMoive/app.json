@@ -26,7 +26,7 @@
       {
         "pagePath": "pages/movies/movies",
         "text": "电影",
-        "iconPath":"images/icon/share-anti.png",
+        "iconPath": "images/icon/share-anti.png",
         "selectedIconPath": "images/icon/share.png"
       }
     ]
