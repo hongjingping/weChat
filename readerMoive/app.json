@@ -8,9 +8,9 @@
     "pages/movies/more-detail/movie-detail"
   ],
   "window": {
-    "navigationBarBackgroundColor": "#b3d4db",
+    "navigationBarBackgroundColor": "#99FFFF",
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "第一个微信小程序页面-首页",
+    "navigationBarTitleText": "Green Homes",
     "backgroundColor": "#eeeeee",
     "backgroundTextStyle": "light"
   },

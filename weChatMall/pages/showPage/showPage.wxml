@@ -1,0 +1,26 @@
+<view class='container'>
+  <view class="swiper-container">
+        <swiper class="swiper_box" autoplay="{{autoplay}}" indicator-dots="true" interval="{{interval}}" duration="{{duration}}" bindchange="swiperchange">
+            <block>
+                <swiper-item>
+                    <image src="/images/banner1.jpg" class="slide-image" width="750rpx" height="562.5rpx"/>
+                </swiper-item>
+                <swiper-item>
+                    <image src="/images/banner2.jpg" class="slide-image" width="750rpx" height="562.5rpx"/>
+                </swiper-item>
+                <swiper-item>
+                    <image src="/images/banner3.jpg" class="slide-image" width="750rpx" height="562.5rpx"/>
+                </swiper-item>
+            </block>
+        </swiper> 
+  </view>
+   <view class="type-container">
+        <scroll-view class="type-navbar">
+            <view class="type-box" wx:for='{{ tabItem }}' wx:for-items="{{ tabItem }}" wx:key="id">
+                <view catchtap='tabClick' class="type-navbar-item {{ activeCategoryId == item.id ? 'type-item-on' : ''}}">
+                    {{ item.name }}
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>

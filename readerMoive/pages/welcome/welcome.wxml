@@ -1,11 +1,22 @@
-<!-- wxml是编写小程序骨架的文件  -->
-<!-- div  -->
-<!-- image图片  -->
-<!-- text文本  -->
 <view class='container'>
-  <image class='user-avatar' src='/images/kt1.jpg'></image>
-  <text class='user-name'><text style='color: red'>Hello</text>, wikiHong</text>
-  <view class='moto-container' bindtap="onTap">
-    <text class='moto'>welcome,小程序之旅</text>
+  <view class='remind-box' wx:if='{{ reload }}'>
+    <image class='remind-img' src='../../images/loading.gif'></image>
   </view>
+  <block wx:else>
+    <image class="title" src="/images/title8.png"></image>
+    <view class='content'>
+      <view class='hd' style="transform:rotateZ({{angle}}deg);">
+        <image class="logo" src="/images/ht1.jpeg"></image>
+        <image class="wave" src="/images/wave.png" mode="aspectFill"></image>
+        <image class="wave wave-bg" src="/images/wave.png" mode="aspectFill"></image>
+      </view>
+      <view class='bd'>
+        <image class="smalltitle" src="/images/confirm-word1.png"></image>
+        <view class="confirm-btn" bindtap="onTap">
+          <text class='btn-text'>点击,有惊喜哦</text>
+        </view>
+        <text class="copyright">Copyright © 2018-2028 wikiHong. All Rights Reserved.</text>
+      </view>
+    </view>
+  </block>
 </view>

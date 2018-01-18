@@ -2,15 +2,15 @@
    <view class='post-contianer'>
       <view class='post-author-date'>
         <image class='post-author' wx:if='{{ imgShow }}' src="{{ author_img }}"></image>
-        <text  class='post-date'>{{ date + '是萍宝贝的生日哦~' }}</text>
+        <text  class='post-date'>{{ date }}</text>
       </view>
       <text class='post-title'>{{ title }}</text>
       <image class='post-image' src="{{ post_img }}"></image>
       <text class='post-content'>{{ content }}</text>
       <view class='post-like'>
-        <image class='post-like-image' src="../../images/kt7.jpg"></image>
+        <image class='post-like-image' src="../../images/ys.jpg"></image>
         <text class='post-like-font'>{{ view_num }}</text>
-        <image class='post-like-image' src="../../images/kt9.jpg"></image>
+        <image class='post-like-image' src="../../images/kc.jpg"></image>
         <text class='post-like-font'>{{ collect_num }}</text>
       </view>
     </view>  
